@@ -16,6 +16,7 @@ function extractMarkdown(text: string): string | null {
 }
 
 export async function POST(request: Request) {
+  const BASE_URL = process.env.BASE_URL;
   try {
     const { mindmap, prompt } = await request.json();
     if (!mindmap || !prompt) {
@@ -40,7 +41,7 @@ Return the updated mindmap in proper markdown format (use '-' for subnodes).
       stream: false,
     };
 
-    const ollamaResponse = await fetch('http://129.49.69.210:11434/api/generate', {
+    const ollamaResponse = await fetch(`${BASE_URL}/api/generate`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload),
