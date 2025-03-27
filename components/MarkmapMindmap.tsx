@@ -11,7 +11,6 @@ interface MarkmapMindmapProps {
 export default function MarkmapMindmap({ markdown }: MarkmapMindmapProps) {
   const refSvg = useRef<SVGSVGElement | null>(null);
   const refMm = useRef<Markmap | null>(null);
-  const refToolbar = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     if (!refMm.current && refSvg.current) {
@@ -83,7 +82,6 @@ export default function MarkmapMindmap({ markdown }: MarkmapMindmapProps) {
   return (
     <div className="relative w-full h-full">
       <svg ref={refSvg} className="w-full h-full"></svg>
-      <div ref={refToolbar} className="absolute bottom-4 right-4"></div>
       <div className="absolute top-4 right-4 flex gap-2">
         <button
           onClick={openMindmap}

@@ -9,7 +9,7 @@ const fallbackMarkdown = `
 /**
  * Convert a JSON object into a basic markdown bullet list.
  */
-function convertMapToMarkdown(map: any, indent = 0): string {
+function convertMapToMarkdown(map: Record<string, any>, indent = 0): string {
   let md = '';
   const prefix = '  '.repeat(indent) + '- ';
   for (const key in map) {
