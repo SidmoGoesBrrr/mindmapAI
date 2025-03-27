@@ -282,7 +282,7 @@ export default function Home(): JSX.Element {
       <div
         style={{ width: `${100 - leftWidth}%` }}
         className="overflow-auto p-4"
-      >
+      >d
         <h1 className="text-3xl font-bold mb-4 text-center">Mindmap Generator</h1>
         {mindmap ? (
           <>
