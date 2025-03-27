@@ -18,7 +18,6 @@ export default function Home(): JSX.Element {
   const [isResizing, setIsResizing] = useState<boolean>(false);
   const containerRef = useRef<HTMLDivElement>(null);
 
-  const router = useRouter();
 
   // Generate a new mindmap (start over)
   const handleGenerate = async (
@@ -284,7 +283,7 @@ export default function Home(): JSX.Element {
         style={{ width: `${100 - leftWidth}%` }}
         className="overflow-auto p-4"
       >
-        <h1 className="text-3xl font-bold mb-4">Mindmap Generator</h1>
+        <h1 className="text-3xl font-bold mb-4 text-center">Mindmap Generator</h1>
         {mindmap ? (
           <>
             <div className="w-full mb-4">
@@ -359,7 +358,7 @@ export default function Home(): JSX.Element {
         ) : (
           <form onSubmit={handleGenerate} className="w-full max-w-2xl mx-auto mb-8">
             <label className="block text-lg font-medium text-gray-800 mb-2">
-              🌟 Try something like: <span className="italic text-blue-600">"Recursion with real-world examples"</span>
+              🌟 Try something like: <span className="italic text-blue-600">&quot;Recursion with real-world examples&quot;</span>
             </label>
             <textarea
               className="w-full p-4 border-2 border-blue-300 rounded-lg shadow-sm focus:outline-none focus:border-blue-500 text-gray-800 text-base mb-4 transition duration-200"
